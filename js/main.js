@@ -18,22 +18,22 @@ function validateForm(){
 		 		var box = document.getElementsByClassName('input-box')[0];
 		 		var spn = document.createElement('span');
 		 		var cnt = document.createTextNode('Ingresar tu nombre, Ej: Emelys');
-		 		spn.box.appendChild(cnt);
-		 		spn.box.appendChild(spn);
+		 		spn.appendChild(cnt);
+		 		box.appendChild(spn);
 		 		return false;
 		 	} else if (!letras.test(name)){
 		 		var box = document.getElementsByClassName('input-box')[0];
 		 		var spn = document.createElement('span');
 		 		var cnt = document.createTextNode('Solo letras');
 		 		spn.appendChild(cnt);
-		 		dox.appendChild(spn);
+		 		box.appendChild(spn);
 		 		return true;
 		 	} else if(name.charAt(0) != name.charAt(0).toUpperCase()){
 		 		var box = document.getElementsByClassName('input-box')[0];
 		 		var spn = document.createElement('span');
-		 		var cnt = document.createTextNode('Comezar con masyuscola');
+		 		var cnt = document.createTextNode('Comezar con masyuscula');
 		 		spn.appendChild(cnt);
-		 		dox.appendChild(spn);
+		 		box.appendChild(spn);
 		 	}
 		}
 		name();
@@ -41,18 +41,18 @@ function validateForm(){
 		function lastname(){
 		 	var lastname = document.getElementById('lastname').value;
 		 	if(lastname == null || lastname.length == 0 || lastname.length == 0 || /^\s+$/.test(lastname)){
-		 		var box = document.getElementsByClassName('input-4')[1];
+		 		var box = document.getElementsByClassName('input-box')[1];
 		 		var spn = document.createElement('span');
 		 		var cnt = document.createTextNode('Ingresar tu apellido');
 		 		spn.appendChild(cnt);
-		 		dox.appendChild(spn);
+		 		box.appendChild(spn);
 		 		return true;
 		 	} else if(!letras.test(lastname)){
 		 		var box = document.getElementsByClassName('input-box')[1];
 		 		var spn = document.createElement('span');
 		 		var cnt = document.createTextNode('Solo letras');
 		 		spn.appendChild(cnt);
-		 		dox.appendChild(spn);
+		 		box.appendChild(spn);
 		 		return true;
 		 	} else if(lastname.charAt(0) != lastname.charAt(0).toUpperCase()) {
 		 		var box = document.getElementsByClassName('input-box')[1];
@@ -72,15 +72,8 @@ function validateForm(){
 		 		var spn = document.createElement('span');
 		 		var cnt = document.createTextNode('Ingresa tu correo electronico');
 		 		spn.appendChild(cnt);
-		 		dox.appendChild(spn);
+		 		box.appendChild(spn);
 				return false;
-			} else if(simbolos.test(correoElectronico)){
-				var box = document.getElementsByClassName('input-box')[2];
-		 		var spn = document.createElement('span');
-		 		var cnt = document.createTextNode('Verifica tu correo electronico');
-		 		spn.appendChild(cnt);
-		 		dox.appendChild(spn);
-				return true;
 			}
 	    }
 	    correoElectronico();
