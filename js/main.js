@@ -1,5 +1,4 @@
 /*validaciones de los campos son las siguientes:
-
 Todos los campos son obligatorios, excepto los dos últimos.
 Los campos nombre y apellido sólo deben permitir caracteres de la A-Z
 Para los campos nombre y apellido la primera letra debe ser mayúscula
@@ -11,6 +10,7 @@ El valor seleccionado de bicis, debe ser una de las opciones presentadas */
 
 function validateForm(){
 		var letras = /^[A-Za-z\_\-\.\s\xF1\xD1]+$/;
+		var selector = document.getElementsByTagName('select')[0];
 
 		function name(){
 		 	var name = document.getElementById('name').value;
@@ -79,7 +79,7 @@ function validateForm(){
 	    correoElectronico();
 
 	    function contrasenia(){
-	    	var contrasenia = document.getElementById('input-Password').value;
+	    	var contrasenia = document.getElementById('input-password').value;
 	    	if (contrasenia == null || contrasenia.length == 0){
 	    		var box = document.getElementsByClassName('input-box')[3];
 		 		var spn = document.createElement('span');
@@ -99,13 +99,13 @@ function validateForm(){
 	    contrasenia();
 
 	    function modeloBici(){
-	    	var selector = document.getElementsByTagName('select').value;
 	    	var modelo = selector.value;
 	    	var box = document.getElementsByClassName('input-box')[4];
 		 	var spn = document.createElement('span');
 		 	var cnt = document.createTextNode('Selecciona una opción');
 		 	spn.appendChild(cnt);
 		 	box.appendChild(spn);
+		 	return false;
 	    	return modelo == 'Urbana' || modelo == 'Treking' || modelo == 'Eléctrica' || modelo == 'Estática';
 	    }
 	    modeloBici();
